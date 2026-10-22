@@ -3,8 +3,8 @@
 ## Identificação da dupla
 - João Vitor Vieira da Costa
 - Gustavo Piancó dos Santos
-- Turma:513
-Curso Técnico em Informática – IFAL.
+- Turma: 513
+- Curso Técnico em Informática – IFAL.
 
 ## Descrição do projeto
 Migração do portal "Site Gustagol e JVrau" (ATV07) para o framework Django.
