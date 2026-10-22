@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport: essencial para responsividade em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block titulo %}Site Gustagol e JVrau{% endblock %}</title>
+
+    <!-- ícone da página -->
+    <link rel="shortcut icon" href="{% static 'paginas/img/favicon.webp' %}">
+
+    <!-- CSS do projeto (arquivo estático) -->
+    <link rel="stylesheet" href="{% static 'paginas/css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header>
+        Site Gustagol e JVrau
+    </header>
+
+    <!-- Área principal (menu + conteúdo) -->
+    <article>
+
+        <!-- Menu lateral: gerado dinamicamente a partir do model Menu -->
+        <nav>
+            <h3 style="margin-bottom: 15px;">Menu:</h3>
+
+            {% for item in itens_menu %}
+                {% if item.eh_externo %}
+                    <a class="btn-menu" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+                        {{ item.titulo }}
+                    </a>
+                {% else %}
+                    <a class="btn-menu{% if request.path == item.url %} ativo{% endif %}" href="{{ item.url }}">
+                        {{ item.titulo }}
+                    </a>
+                {% endif %}
+            {% empty %}
+                <p>Nenhum item de menu cadastrado. Acesse o Django Admin.</p>
+            {% endfor %}
+        </nav>
+
+        <!-- Área de conteúdo -->
+        <main id="conteudo-principal">
+            {% block conteudo %}{% endblock %}
+        </main>
+
+    </article>
+
+    <!-- Rodapé da página -->
+    <footer>
+        Desenvolvido por João Vitor / Gustavo Piancó
+    </footer>
+
+    <script src="{% static 'paginas/js/script.js' %}" defer></script>
+</body>
+
+</html>
