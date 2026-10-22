@@ -3,7 +3,7 @@
 ## Identificação da dupla
 - João Vitor Vieira da Costa
 - Gustavo Piancó dos Santos
-
+- Turma:513
 Curso Técnico em Informática – IFAL.
 
 ## Descrição do projeto
