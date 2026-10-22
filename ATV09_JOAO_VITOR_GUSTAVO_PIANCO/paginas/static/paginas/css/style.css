@@ -1,0 +1,736 @@
+/* Portal Gustagol e JVrau - CSS reaproveitado da ATV07 (agora arquivo estático do Django) */
+        /* Reset básico para evitar margens/paddings indesejados */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Configurações gerais da página */
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #1f2937;
+            background-color: #f0f0f0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        /* Cabeçalho do site */
+        header {
+            background-color: #2b2b2b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 22px;
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* área principal - flex para menu lateral + conteúdo */
+        article {
+            width: 100%;
+            min-height: auto;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: 1fr;
+            background-color: #eef2f7;
+            border-left: 1px solid #999;
+            border-right: 1px solid #999;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+        }
+
+        /* Menu lateral onde ficam os botões de navegação */
+        nav {
+            width: 100%;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border: 1px solid #999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Área onde os conteúdos são exibidos */
+        main {
+            width: 100%;
+            border: 1px solid #999;
+            background-color: #eef2f7;
+            box-sizing: border-box;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 800px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Rodapé do site */
+        footer {
+            background-color: #2b2b2b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            font-size: 20px;
+            line-height: 30px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* Título principal usado em todas as seções */
+        .titulo-principal {
+            color: #000000;
+            text-align: center;
+            border-bottom: 3px solid #000000;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 20px auto;
+            padding-bottom: 5px;
+            font-size: 24px;
+        }
+
+        /* Botões do menu */
+        .btn-menu {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #2b2b2b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: 'Montserrat', Arial, sans-serif;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Os botões do menu agora são links <a> gerados pelo Django */
+        a.btn-menu {
+            text-decoration: none;
+        }
+
+        .btn-menu:hover {
+            background-color: #1a1a1a;
+        }
+
+        /* Item do menu da página atual */
+        .btn-menu.ativo {
+            background-color: #000000;
+            outline: 2px solid #8a8a8a;
+        }
+
+        /* Link de download do PDF (página inicial) */
+        .link-download {
+            display: inline-block;
+            background-color: #2b2b2b;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .link-download:hover {
+            background-color: #1a1a1a;
+        }
+
+        /* Tabelas padrão */
+        .tabela-padrao {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tabela-padrao th,
+        .tabela-padrao td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .tabela-padrao th {
+            background-color: #2b2b2b;
+            color: white;
+            font-weight: bold;
+        }
+
+        .tabela-padrao .rotulo {
+            background-color: #d8d8d8;
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .tabela-padrao .valor {
+            width: 70%;
+            text-align: left;
+        }
+
+        /* Imagens de perfil */
+        .img-perfil {
+            width: 200px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2b2b2b;
+            display: block;
+            margin: 20px auto;
+            aspect-ratio: 1 / 1;
+        }
+
+        /* Imagens de jogos/brawlers */
+        .img-jogo {
+            width: 100%;
+            max-width: 60px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #2b2b2b;
+        }
+
+        .img-jogo-grande {
+            width: 280px;
+            height: 170px;
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Cards de imagens (página inicial) */
+        .card-imagem {
+            text-align: center;
+        }
+
+        .card-imagem img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2b2b2b;
+            margin-bottom: 10px;
+        }
+
+        .card-imagem p {
+            font-weight: bold;
+            color: #2b2b2b;
+            margin-top: 5px;
+        }
+
+        /* Container flex para imagens lado a lado */
+        .container-imagens {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        /* Caixa de informações */
+        .caixa-info {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #2b2b2b;
+            text-align: left;
+        }
+
+        .caixa-info-centralizada {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        /* Página principal (capa) */
+        .pagina-capa {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .pagina-capa h1 {
+            font-size: 42px;
+            color: #2b2b2b;
+            margin-bottom: 20px;
+        }
+
+        .pagina-capa h2 {
+            font-size: 24px;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+        }
+
+        .pagina-capa p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Conteúdo das seções */
+        .conteudo {
+            background-color: #eef2f7;
+            padding: 10px;
+        }
+
+        /* Tema padrão */
+        .tema-padrao {
+            background-color: #eef2f7;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .tema-padrao .titulo-principal {
+            color: #000000;
+            border-bottom-color: #000000;
+            text-align: center;
+            display: block;
+            margin: 30px auto 20px auto;
+            padding-bottom: 10px;
+            font-size: 26px;
+            border-bottom: 3px solid #000000;
+            width: 100%;
+        }
+
+        .tema-padrao .tabela-padrao {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #2b2b2b;
+        }
+
+        .tema-padrao .tabela-padrao th {
+            background-color: #2b2b2b;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 12px;
+            border: 1px solid #555;
+            text-align: center;
+        }
+
+        .tema-padrao .tabela-padrao td {
+            padding: 12px;
+            border: 1px solid #555;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .tema-padrao .tabela-padrao tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tema-padrao .img-jogo-tema {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #2b2b2b;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tema-padrao .img-logo-tema {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 5%;
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+        }
+
+        .tema-padrao .caixa-info-tema {
+            background-color: #ffffff;
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin: 25px 0 15px 0;
+            border-left: 5px solid #2b2b2b;
+            border: 2px solid #2b2b2b;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tema-padrao .subtitulo-tema {
+            color: #000000;
+            text-align: center;
+            font-size: 22px;
+            margin: 35px 0 10px 0;
+            font-weight: bold;
+        }
+
+        .logo-pequena {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 5%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .texto-negrito {
+            font-weight: bold;
+        }
+
+        .texto-centralizado {
+            text-align: center;
+        }
+
+        .margem-superior {
+            margin-top: 20px;
+        }
+
+        /* ========================================== */
+        /* ESTILOS DO FORMULÁRIO DE CONTATO (ATV07)    */
+        /* ========================================== */
+
+        /* Container do formulário */
+        .formulario-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid #2b2b2b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .formulario-container h2 {
+            text-align: center;
+            color: #2b2b2b;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #2b2b2b;
+            padding-bottom: 10px;
+        }
+
+        /* Fieldset e Legend */
+        fieldset {
+            border: 2px solid #2b2b2b;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2b2b2b;
+            padding: 0 10px;
+        }
+
+        /* Grupos de campo */
+        .grupo-campo {
+            margin-bottom: 18px;
+        }
+
+        .grupo-campo label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2b2b2b;
+        }
+
+        .grupo-campo input,
+        .grupo-campo select,
+        .grupo-campo textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        /* ========================================== */
+        /* VALIDAÇÃO CSS COM :valid E :invalid        */
+        /* ========================================== */
+
+        /* Campo válido - borda verde */
+        .grupo-campo input:valid,
+        .grupo-campo select:valid,
+        .grupo-campo textarea:valid {
+            border-color: #2ecc71;
+            background-color: #f0fff4;
+        }
+
+        /* Campo inválido - borda vermelha */
+        .grupo-campo input:invalid,
+        .grupo-campo select:invalid,
+        .grupo-campo textarea:invalid {
+            border-color: #e74c3c;
+            background-color: #fff5f5;
+        }
+
+        /* Estilização específica para campos obrigatórios */
+        .grupo-campo input:required,
+        .grupo-campo select:required,
+        .grupo-campo textarea:required {
+            border-left: 5px solid #2b2b2b;
+        }
+
+        .grupo-campo input:required:valid,
+        .grupo-campo select:required:valid,
+        .grupo-campo textarea:required:valid {
+            border-left: 5px solid #2ecc71;
+        }
+
+        .grupo-campo input:required:invalid,
+        .grupo-campo select:required:invalid,
+        .grupo-campo textarea:required:invalid {
+            border-left: 5px solid #e74c3c;
+        }
+
+        /* Grupo de Radio Buttons */
+        .grupo-radio {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .grupo-radio label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .grupo-radio input[type="radio"] {
+            width: auto;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* Botão de envio */
+        .btn-enviar {
+            background-color: #2b2b2b;
+            color: white;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 20px auto 0 auto;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn-enviar:hover {
+            background-color: #1a1a1a;
+        }
+
+        /* ========================================== */
+        /* PÁGINA DE SUCESSO (ATV07)                  */
+        /* ========================================== */
+
+        .pagina-sucesso {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .pagina-sucesso.ativa {
+            display: block;
+        }
+
+        .pagina-sucesso .icone-sucesso {
+            font-size: 80px;
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+
+        .pagina-sucesso h1 {
+            color: #2b2b2b;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .pagina-sucesso .mensagem-sucesso {
+            background-color: #f0fff4;
+            border: 2px solid #2ecc71;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 500px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .pagina-sucesso .mensagem-sucesso strong {
+            color: #2b2b2b;
+        }
+
+        .pagina-sucesso .btn-voltar {
+            background-color: #2b2b2b;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .pagina-sucesso .btn-voltar:hover {
+            background-color: #1a1a1a;
+        }
+
+        /* Indicador de campo obrigatório */
+        .campo-obrigatorio::after {
+            content: " *";
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Mensagem de ajuda para campos */
+        .dica-campo {
+            font-size: 13px;
+            color: #666;
+            margin-top: 3px;
+            font-style: italic;
+        }
+
+        /* ========================================== */
+        /* RESPONSIVIDADE                             */
+        /* ========================================== */
+
+        @media (max-width: 768px) {
+            body {
+                width: 100%;
+                margin: 0;
+                padding: 10px;
+            }
+
+            header,
+            footer {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            article {
+                width: 100%;
+                flex-direction: column;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
+                border-radius: 0;
+            }
+
+            nav {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #999;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            main {
+                width: 100%;
+                max-height: none;
+                border-left: 1px solid #999;
+            }
+
+            .tabela-padrao {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+                font-size: 13px;
+            }
+
+            .tabela-padrao th,
+            .tabela-padrao td {
+                padding: 8px 6px;
+                font-size: 12px;
+            }
+
+            .img-perfil {
+                width: 150px;
+                height: 150px;
+            }
+
+            .container-imagens {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .card-imagem img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .pagina-capa h1 {
+                font-size: 28px;
+            }
+
+            .titulo-principal {
+                font-size: 22px;
+            }
+
+            .btn-menu {
+                flex: 1 1 45%;
+                min-width: 100px;
+                font-size: 13px;
+                margin-bottom: 0;
+            }
+
+            .formulario-container {
+                padding: 20px;
+            }
+
+            .grupo-radio {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn-enviar {
+                max-width: 100%;
+            }
+
+            .pagina-sucesso .mensagem-sucesso {
+                padding: 20px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .formulario-container {
+                padding: 15px;
+            }
+
+            .grupo-campo input,
+            .grupo-campo select,
+            .grupo-campo textarea {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .pagina-sucesso h1 {
+                font-size: 24px;
+            }
+        }
+
+        /* ========================================== */
+        /* MENSAGEM DE SUCESSO NA URL (ATV07)         */
+        /* ========================================== */
+
+        /* Estilo para quando a página de sucesso for exibida */
+        .sucesso-ativo {
+            display: block !important;
+        }
+
+    

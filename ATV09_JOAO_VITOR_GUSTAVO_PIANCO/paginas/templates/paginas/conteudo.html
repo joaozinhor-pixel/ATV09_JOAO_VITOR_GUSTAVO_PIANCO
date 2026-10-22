@@ -1,0 +1,8 @@
+{% extends "paginas/base.html" %}
+
+{% block titulo %}{{ conteudo.titulo }} - Site Gustagol e JVrau{% endblock %}
+
+{% block conteudo %}
+    {# O HTML vem do banco de dados (campo conteudo_html). "safe" evita que o Django escape as tags. #}
+    {{ conteudo.conteudo_html|safe }}
+{% endblock %}
